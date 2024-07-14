@@ -1,22 +1,24 @@
+// src/ListaItens.tsx
+
 import React from 'react';
 import { ItemEstoque } from './type';
 
-interface ListaItensProps {
+interface ListaItemProps {
   listaItens: ItemEstoque[];
   handleDelItem: (id: number) => void;
 }
 
-const ListaItens: React.FC<ListaItensProps> = ({ listaItens, handleDelItem }) => {
+const ListaItens: React.FC<ListaItemProps> = ({ listaItens, handleDelItem }) => {
   return (
-    <div>
-      <h1>Lista de Itens do Estoque</h1>
+    <div className="lista-itens">
+      <h2>Lista de Itens do Estoque</h2>
       <ul>
         {listaItens?.map(item => (
-          <li key={item.id}>
-            <h2>{item.nome}</h2>
+          <li key={item.id} className="item">
+            <h3>{item.nome}</h3>
             <p>Quantidade: {item.quantidade}</p>
             <p>Preço: R${item.preco.toFixed(2)}</p>
-            <button onClick={() => handleDelItem(item.id)}>Remover</button>
+            <button onClick={() => handleDelItem(item.id)}>Excluir</button>
           </li>
         ))}
       </ul>
