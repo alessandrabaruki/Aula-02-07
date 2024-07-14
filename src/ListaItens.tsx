@@ -1,5 +1,3 @@
-// src/ListaItens.tsx
-
 import React from 'react';
 import { ItemEstoque } from './type';
 

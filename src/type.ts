@@ -1,4 +1,3 @@
-// src/types.ts
 export interface ItemEstoque {
     id: number;
     nome: string;
